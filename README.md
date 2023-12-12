@@ -7,12 +7,12 @@ RAW Data Characteristic Mining*.
 |---------------|-------------------------|
 |![Information Gap](./figures/1-information-gap.png)|![Information Gap](./figures/activation.png)|
 ***
-### Functional Regularization (pseudocode)
+## Functional Regularization (pseudocode)
 <img src=./figures/FR_pseudocode.png width=65% />
-***
-### Visualization
+
+## Visualization
 <img src=./figures/benchmark_figures.png width=65% />
 
-Full configuration files and model checkpoints coming soon.
+>Full configuration files and model checkpoints coming soon.
 ## License
 RAW Mining is released under the MIT License. See the [LICENSE](https://github.com/DreamerCCC/RawMining/blob/main/LICENSE) file for more details.
