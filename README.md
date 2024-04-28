@@ -106,6 +106,7 @@ Taking into account the adverse scenarios of RGB in real-world and the general e
 </details>
 
 To further analyze detector robustness, we experimented with RGB and RAW detection under conditions of lighting changes and occlusions using albumentations and cutout, detailed in Table *a*. Results show RGB detection decreases more than RAW detection when lighting conditions are altered.
+
 <img src=./figures/faster_results.png width=65% />
 
 
