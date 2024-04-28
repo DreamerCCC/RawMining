@@ -8,10 +8,9 @@ RAW Data Characteristic Mining*.
 |---------------|-------------------------|
 |![Information Gap](./figures/1-information-gap.png)|![Information Gap](./figures/activation.png)|
 ***
-<<<<<<< HEAD
 
 ## Pipeline of RAW Detection (***PRD***)
-*PRD* fundamentally distinguishes itself from demosaicing or other two-stage structures. *PRD* does not involve the generation or reconstruction of a complete RGB image. Its primary objective is to facilitate detection by making adaptive adjustments to RAW images, without imposing additional burden.
+>*PRD* fundamentally distinguishes itself from demosaicing or other two-stage structures. *PRD* does not involve the generation or reconstruction of a complete RGB image. Its primary objective is to facilitate detection by making adaptive adjustments to RAW images, without imposing additional burden.
 <details>
 <summary><strong>Implementation Details</strong> (click to expand) </summary>
 
@@ -98,30 +97,33 @@ Configuration files and model checkpoints are provided. Here is a summary table 
 </details>
 
 ## RAW Corruption Benchmark (***RCB***)
-Fine-tuning a model on a specific type of corruption does not necessarily improve its performance on other forms of perturbation or corrosion. Fine-tuning on multiple types of corruption may lead to decreased performance.
+>Fine-tuning a model on a specific type of corruption does not necessarily improve its performance on other forms of perturbation or corrosion. Fine-tuning on multiple types of corruption may lead to decreased performance.
 
 <details>
 <summary><strong>Implementation Details</strong> (click to expand) </summary>
-Taking into account the adverse scenarios of RGB in real-world and the general experimental interference, we developed eight corrupt scenarios in *RCB*, including two categories: blur and weather. The reason for excluding other common interferences is to prevent the reconstructed distorted RAW images from deviating from the true data distribution.
+
+Taking into account the adverse scenarios of RGB in real-world and the general experimental interference, we developed eight corrupt scenarios in RCB, including two categories: blur and weather. The reason for excluding other common interferences is to prevent the reconstructed distorted RAW images from deviating from the true data distribution.
 </details>
 
 To further analyze detector robustness, we experimented with RGB and RAW detection under conditions of lighting changes and occlusions using albumentations and cutout, detailed in Table *a*. Results show RGB detection decreases more than RAW detection when lighting conditions are altered.
-<img src=./figures/faster_results.png width=75% />
+<img src=./figures/faster_results.png width=65% />
 
 
 ## Functional Regularization (***FR***)
 <details>
 <summary><strong>Implementation Details</strong> (click to expand) </summary>
+
 We conduct an in-depth investigation into the optimal placement of *FR* to further enhance performance improvements. Notably, even when researchers employ novel activation functions, such as in MobileNet v3, the middle layer of the network continues to utilize the ReLU function, with H-Swish being employed solely at the beginning or end.
 </details>
 
-<img src=./figures/FR_pseudocode.png width=65% />
+<img src=./figures/FR_pseudocode.png width=60% />
 
 <details>
 <summary><strong>Ablation Study</strong> (click to expand) </summary>
+
 *In which part of the network (backbone, neck, head, or specific layers) should the activation function replacement occur?* As shown in Table *b*, we have made the following observations: (1) Neither ReLU6 nor H-Swish outperforms ReLU in the head. (2) The appropriate component positions for ReLU6 and H-Swish differ. (3) Achieving optimal results involves replacing the activation function with our *FR* in the initial layers of both the backbone and neck. This is the final decision we have made regarding the replacement with *FR*.
 
-<img src=./figures/fr_ablation.png width=65% />
+<img src=./figures/fr_ablation.png width=55% />
 </details>
 
 
@@ -148,14 +150,3 @@ If you find it inspiring, please consider citing:
         pages={1063--1071},
         year={2024}
     }
-=======
-## Functional Regularization (pseudocode)
-<img src=./figures/FR_pseudocode.png width=65% />
-
-## Visualization
-<img src=./figures/benchmark_figures.png width=65% />
-
->Full configuration files and model checkpoints coming soon.
-## License
-RAW Mining is released under the MIT License. See the [LICENSE](https://github.com/DreamerCCC/RawMining/blob/main/LICENSE) file for more details.
->>>>>>> 16206230b1256c08673d0063d20bb94c67fa53d0
