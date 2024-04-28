@@ -8,6 +8,7 @@ RAW Data Characteristic Mining*.
 |---------------|-------------------------|
 |![Information Gap](./figures/1-information-gap.png)|![Information Gap](./figures/activation.png)|
 ***
+<<<<<<< HEAD
 
 ## Pipeline of RAW Detection (***PRD***)
 *PRD* fundamentally distinguishes itself from demosaicing or other two-stage structures. *PRD* does not involve the generation or reconstruction of a complete RGB image. Its primary objective is to facilitate detection by making adaptive adjustments to RAW images, without imposing additional burden.
@@ -147,3 +148,14 @@ If you find it inspiring, please consider citing:
         pages={1063--1071},
         year={2024}
     }
+=======
+## Functional Regularization (pseudocode)
+<img src=./figures/FR_pseudocode.png width=65% />
+
+## Visualization
+<img src=./figures/benchmark_figures.png width=65% />
+
+>Full configuration files and model checkpoints coming soon.
+## License
+RAW Mining is released under the MIT License. See the [LICENSE](https://github.com/DreamerCCC/RawMining/blob/main/LICENSE) file for more details.
+>>>>>>> 16206230b1256c08673d0063d20bb94c67fa53d0
